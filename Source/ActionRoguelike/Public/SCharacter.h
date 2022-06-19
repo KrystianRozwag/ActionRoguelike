@@ -7,7 +7,7 @@
 #include "SCharacter.generated.h"
 
 
-
+class USInteractionComponent;
 class UCameraComponent;
 class USpringArmComponent;
 UCLASS()
@@ -26,11 +26,15 @@ protected:
 	USpringArmComponent* SpringArmComp;
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* CameraComp;
+	UPROPERTY(VisibleAnywhere)
+	USInteractionComponent* InteractionComp;
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void PrimaryAttack();
+	void PrimaryInteract();
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
